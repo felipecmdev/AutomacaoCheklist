@@ -26,15 +26,15 @@ class Controlador:
         self.Thread = Thread()
         self.infosTemp = []
         self.infosParaSalvar = {
-            'Nome': '', 'Data': '', 'Modelo': '', 'Serial': '', 'SO': '',
-            'DanoTela': '', 'Moldura': '', 'Palmrest': '', 'DeadPixels': '', 'Dobradica': '', 'Tampa': '', 'CiteCarcaca': '',
-            'EntradaUSB': '', 'SaidaVideo': '', 'CiteUSBVideo': '', 'Teclado': '', 'TouchPad': '', 'CiteTecladoTouchPad': '',
-            'Speaker': '', 'Cam': '', 'Mic': '', 'CiteAWM': '', 'Rede': '', 'Wifi': '', 'CiteRede': '',
-            'Alimentacao': '', 'Fonte': '', 'CiteFonte': '', 'Bateria': '', 'CapFabrica': '', 'CapAtual': '', 'QtCiclos': '', 'CiteBateria': '',
-            'Disco': '', 'Saude': '', 'DiscoTemp': '', 'HorasLigado': '', 'ModDisco': '', 'CiteDisco': '',
+            'Nome': '', 'DataH': '', 'MarcaModelo': '', 'Serial': '', 'SO': '',
+            'DanoTela': '', 'DanoMoldura': '', 'DanoPalmrest': '', 'DanoDeadPixels': '', 'DanoDobradica': '', 'DanoTampa': '', 'CiteCarcaca': '',
+            'EntradaUSB': '', 'SaidaVideo': '', 'CiteUSBVideo': '', 'DefeitoTeclado': '', 'DefeitoTouchPad': '', 'CiteTecladoTouchPad': '',
+            'DefeitoSpeaker': '', 'DefeitoCam': '', 'DefeitoMic': '', 'CiteAWM': '', 'DefeitoRede': '', 'DefeitoWifi': '', 'CiteRede': '',
+            'DefeitoAlimentacao': '', 'DefeitoFonte': '', 'CiteFonte': '', 'DefeitoBateria': '', 'CapFabrica': '', 'CapAtual': '', 'QtCiclos': '', 'CiteBateria': '',
+            'DefeitoDisco': '', 'DefeitoSaude': '', 'DiscoTemp': '', 'HorasLigado': '', 'ModDisc': '', 'CiteDisco': '',
             'StressCPU': '', 'CPUTempMin': '', 'CPUTempMax': '', 'CPUTempMd': '', 'DefeitoCPU': '',
             'StressGPU': '', 'GPUTempMin': '', 'GPUTempMax': '', 'GPUTempMd': '', 'DefeitoGPU': '',
-            'VIDCore': '', 'QTMem': '', 'DefeitoPlacaMae': '', 'DefeitoBios': '', 'DefeitoMem': '', 'CiteCPUGPUMem': '', 'OBS': ''
+            'TesteMem': '', 'VIDCore': '', 'QTMem': '', 'DefeitoPlacaMae': '', 'DefeitoBios': '', 'DefeitoMem': '', 'CiteCPUGPUMem': '', 'OBS': ''
         }
 
         # Iniciando com a primeira página

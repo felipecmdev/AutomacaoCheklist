@@ -32,7 +32,7 @@ class SextaPagina(PaginaBase):
         self.DefeitoSaude.place(x=15, y=120)
         entradaSaude = Entry(bd=5)
         entradaSaude.place(x=220, y=120, width=200) 
-        Button(self.master, text="Salvar", command=lambda: self.App.salvar('Saude', entradaSaude)).place(x=430, y=120)
+        Button(self.master, text="Salvar", command=lambda: self.App.salvar('DefeitoSaude', entradaSaude)).place(x=430, y=120)
         self.App.infosTemp.append((self.DefeitoSaude, entradaSaude))
         
         self.DiscoTemp = Label(text="DiscoTemp")
@@ -49,12 +49,12 @@ class SextaPagina(PaginaBase):
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('HorasLigado', entradaHorasLigado)).place(x=430, y=220)
         self.App.infosTemp.append((self.HorasLigado, entradaHorasLigado))
 
-        self.ModDisco = Label(text="Modelo do Disco")
-        self.ModDisco.place(x=15, y=270)
+        self.ModDisc = Label(text="Modelo do Disco")
+        self.ModDisc.place(x=15, y=270)
         entradaModDisco = Entry(bd=5)
         entradaModDisco.place(x=220, y=270, width=200) 
-        Button(self.master, text="Salvar", command=lambda: self.App.salvar('ModDisco', entradaModDisco)).place(x=430, y=270)
-        self.App.infosTemp.append((self.ModDisco, entradaModDisco))
+        Button(self.master, text="Salvar", command=lambda: self.App.salvar('ModDisc', entradaModDisco)).place(x=430, y=270)
+        self.App.infosTemp.append((self.ModDisc, entradaModDisco))
 
         self.CiteDisco = Label(text="Cite os Problemas")
         self.CiteDisco.place(x=15, y=320)

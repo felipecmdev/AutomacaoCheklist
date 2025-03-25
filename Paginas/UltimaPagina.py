@@ -14,12 +14,19 @@ class UltimaPagina(PaginaBase):
         self.Header.config(font=("Courier New", 14))
         self.Header.place(x=170, y=20)
 
-        self.NomeArquivoLabel = Label(text="Nome do Arquivo:")
-        self.NomeArquivoLabel.place(x=15, y=70)
-        self.NomeArquivoEntry = Entry(bd=5)
-        self.NomeArquivoEntry.place(x=150, y=70, width=200)
+        self.OBS = Label(text="Observações:")
+        self.OBS.place(x=15, y=70)
+        entradaOBS = Entry(bd=5)
+        entradaOBS.place(x=150, y=70, width=200) 
+        Button(self.master, text="Salvar", command=lambda: self.App.salvar('OBS', entradaOBS)).place(x=360, y=70)
+        self.App.infosTemp.append((self.OBS, entradaOBS))
 
-        Button(self.master, text="Salvar", command=self.salvarDocumento).place(x=360, y=70)
+        self.NomeArquivoLabel = Label(text="Nome do Arquivo:")
+        self.NomeArquivoLabel.place(x=15, y=120)
+        self.NomeArquivoEntry = Entry(bd=5)
+        self.NomeArquivoEntry.place(x=150, y=120, width=200)
+
+        Button(self.master, text="Salvar", command=self.salvarDocumento).place(x=360, y=120)
 
         self.B1 = Button(self.master, text="Página Anterior", command=self.App.nonaPagina)
         self.B1.place(x=15, y=455)

@@ -28,14 +28,14 @@ class QuartaPagina(PaginaBase):
         self.TesteSpeaker.place(x=330, y=70)
 
         CamVar = StringVar(self.master, " ")
-        CamVar.trace("w", lambda *args: self.App.salvar('Cam', CamVar))
-        self.Cam = Label(self.master, text="Defeito na Câmera?")
-        self.Cam.place(x=15, y=120)
+        CamVar.trace("w", lambda *args: self.App.salvar('DefeitoCam', CamVar))
+        self.DefeitoCam = Label(self.master, text="Defeito na Câmera?")
+        self.DefeitoCam.place(x=15, y=120)
         rbCamS = Radiobutton(self.master, text="Sim", variable=CamVar, value="Sim")
         rbCamS.place(x=220, y=120)
         rbCamN = Radiobutton(self.master, text="Não", variable=CamVar, value="Não")
         rbCamN.place(x=280, y=120)
-        self.App.infosTemp.append((self.Cam, CamVar))
+        self.App.infosTemp.append((self.DefeitoCam, CamVar))
         # Programas de teste
         self.TesteCam = Button(self.master, text="Teste da Câmera", command=self.Programas.open_cam)
         self.TesteCam.place(x=330, y=120)

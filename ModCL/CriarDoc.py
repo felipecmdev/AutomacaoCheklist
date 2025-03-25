@@ -4,7 +4,7 @@ from docx import Document
 
 class CriarDoc:
     def __init__(self):
-        self.modelo_path = 'C:\\Automação Cheklist\\ModCL\\ModeloChecklist.docx'  
+        self.modelo_path = 'C:\\AutomacaoCheklist\\ModCL\\ModeloChecklist.docx'  
 
     def salvarDoc(self, infosParaSalvar, novo_nome_arquivo):
         # Copiar o arquivo modelo para o novo local
