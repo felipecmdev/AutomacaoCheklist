@@ -1,10 +1,16 @@
 import re
 import shutil
 from docx import Document
+import os
 
 class CriarDoc:
+    def Volume(self):
+        diretorio_atual = os.path.abspath(os.path.dirname(__file__))
+        volume = os.path.splitdrive(diretorio_atual)[0]
+        return volume
+    
     def __init__(self):
-        self.modelo_path = 'C:\\AutomacaoCheklist\\ModCL\\ModeloChecklist.docx'  
+        self.modelo_path = f'{self.Volume()}\\AutomacaoCheklist\\ModCL\\ModeloChecklist.docx'  
 
     def salvarDoc(self, infosParaSalvar, novo_nome_arquivo):
         # Copiar o arquivo modelo para o novo local

@@ -9,8 +9,6 @@ from Paginas.SetimaPagina import SetimaPagina
 from Paginas.OitavaPagina import OitavaPagina
 from Paginas.NonaPagina import NonaPagina
 from Paginas.UltimaPagina import UltimaPagina
-from Utils.Programas import Programas
-from Utils.PCinfo import PCinfo
 from threading import Thread
 from ModCL.CriarDoc import CriarDoc
 
@@ -21,8 +19,6 @@ class Controlador:
         self.master.minsize(600, 500)
         self.master.maxsize(600, 500)
         self.master.resizable(width=False, height=False)
-        self.Programas = Programas()
-        self.PcInfo = PCinfo()
         self.infosTemp = []
         self.infosParaSalvar = {
             'Nome': '', 'DataH': '', 'MarcaModelo': '', 'Serial': '', 'SO': '',
@@ -40,43 +36,43 @@ class Controlador:
         self.primeiraPagina()
 
     def primeiraPagina(self):
-        self.paginaAtual = PrimeiraPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = PrimeiraPagina(self)
         self.paginaAtual.criarPagina()
 
     def segundaPagina(self):
-        self.paginaAtual = SegundaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = SegundaPagina(self)
         self.paginaAtual.criarPagina()
 
     def terceiraPagina(self):
-        self.paginaAtual = TerceiraPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = TerceiraPagina(self)
         self.paginaAtual.criarPagina()
 
     def quartaPagina(self):
-        self.paginaAtual = QuartaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = QuartaPagina(self)
         self.paginaAtual.criarPagina()
 
     def quintaPagina(self):
-        self.paginaAtual = QuintaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = QuintaPagina(self)
         self.paginaAtual.criarPagina()
 
     def sextaPagina(self):
-        self.paginaAtual = SextaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = SextaPagina(self)
         self.paginaAtual.criarPagina()
 
     def setimaPagina(self):
-        self.paginaAtual = SetimaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = SetimaPagina(self)
         self.paginaAtual.criarPagina()
 
     def oitavaPagina(self):
-        self.paginaAtual = OitavaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = OitavaPagina(self)
         self.paginaAtual.criarPagina()
 
     def nonaPagina(self):
-        self.paginaAtual = NonaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = NonaPagina(self)
         self.paginaAtual.criarPagina()
 
     def ultimaPagina(self):
-        self.paginaAtual = UltimaPagina(self.master, self.PcInfo, self)
+        self.paginaAtual = UltimaPagina(self)
         self.paginaAtual.criarPagina()
 
     def salvar(self, campo, entrada):
@@ -94,4 +90,4 @@ class Controlador:
 
     def salvarDocumento(self, novo_nome_arquivo):
         doc = CriarDoc()
-        Thread(target=doc.criarDoc, args=(novo_nome_arquivo, self.infosParaSalvar)).start()
+        Thread(target=doc.salvarDoc, args=(self.infosParaSalvar, novo_nome_arquivo)).start()

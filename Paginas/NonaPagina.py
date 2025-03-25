@@ -2,10 +2,9 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class NonaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app):
-        super().__init__(master)
+    def __init__(self, app):
+        super().__init__(app.master)
         self.App = app
-        self.Pc_info = pc_info
 
     def criarPagina(self):
         self.App.limparTela()
@@ -34,6 +33,8 @@ class NonaPagina(PaginaBase):
         self.QtMem = Label(text="Quantidade de Memória:")
         self.QtMem.place(x=15, y=170)
         entradaQtMem = Entry(bd=5)
+        entradaQtMem.insert(0, self.PcInfo.Mem())
+        self.App.infosParaSalvar['QtMem'] = f'{entradaQtMem.get()} GB'
         entradaQtMem.place(x=220, y=170, width=200) 
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('QtMem', entradaQtMem)).place(x=430, y=170)
         self.App.infosTemp.append((self.QtMem, entradaQtMem))

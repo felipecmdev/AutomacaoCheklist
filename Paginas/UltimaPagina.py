@@ -2,10 +2,9 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class UltimaPagina(PaginaBase):
-    def __init__(self, master, pc, app):
-        super().__init__(master)
+    def __init__(self, app):
+        super().__init__(app.master)
         self.App = app
-        self.PcInfo = pc
 
     def criarPagina(self):
         self.App.limparTela()
@@ -37,5 +36,5 @@ class UltimaPagina(PaginaBase):
             nome_arquivo += '.docx'
         self.App.salvarDocumento(nome_arquivo)
 
-        caminho_completo = f"C:/Automação Checklist/{nome_arquivo}"
+        caminho_completo = f"C:/AutomacaoChecklist/{nome_arquivo}"
         self.App.salvarDocumento(caminho_completo)

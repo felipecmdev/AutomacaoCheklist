@@ -2,6 +2,8 @@ import platform
 import cpuinfo
 import psutil
 import wmi
+import subprocess
+
 from datetime import date
 
 class PCinfo:
@@ -24,5 +26,5 @@ class PCinfo:
         mem = round(mem)
         return mem
         
-# battery = psutil.sensors_battery()
-# print("Battery Capacity:", battery.percent)
+    def SerialNumber(self):
+        return subprocess.check_output('wmic bios get serialnumber').decode("utf-8").split('\n')[1]

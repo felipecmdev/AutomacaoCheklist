@@ -2,10 +2,9 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class SegundaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app):
-        super().__init__(master)
+    def __init__(self, app):
+        super().__init__(app.master)
         self.App = app
-        self.Pc_info = pc_info
 
     def criarPagina(self):
         self.App.limparTela()

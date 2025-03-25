@@ -2,10 +2,9 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class PrimeiraPagina(PaginaBase):
-    def __init__(self, master, pc_info, app):
-        super().__init__(master)
+    def __init__(self, app):
+        super().__init__(app.master)
         self.App = app
-        self.Pc_info = pc_info
 
     def criarPagina(self):
         self.App.limparTela()
@@ -26,6 +25,8 @@ class PrimeiraPagina(PaginaBase):
         self.DataH = Label(text="Data da Vistoria:")
         self.DataH.place(x=15, y=120)
         entradaData = Entry(bd=5)
+        entradaData.insert(0, self.PcInfo.DataHoje())
+        self.App.infosParaSalvar['DataH'] = entradaData.get()
         entradaData.place(x=150, y=120, width=200)  
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('DataH', entradaData)).place(x=360, y=120)
         self.App.infosTemp.append((self.DataH, entradaData))
@@ -42,6 +43,8 @@ class PrimeiraPagina(PaginaBase):
         self.Serial = Label(text="Série:")
         self.Serial.place(x=15, y=220)
         entradaSerial = Entry(bd=5)
+        entradaSerial.insert(0, self.PcInfo.SerialNumber())
+        self.App.infosParaSalvar['Serial'] = entradaSerial.get()
         entradaSerial.place(x=150, y=220, width=200) 
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('Serial', entradaSerial)).place(x=360, y=220)
         self.App.infosTemp.append((self.Serial, entradaSerial))
@@ -60,6 +63,8 @@ class PrimeiraPagina(PaginaBase):
         self.SO = Label(text="Versão S.O:")
         self.SO.place(x=15, y=320)
         entradaSO = Entry(bd=5)
+        entradaSO.insert(0, self.PcInfo.Winver())
+        self.App.infosParaSalvar['SO'] = entradaSO.get()
         entradaSO.place(x=150, y=320, width=200) 
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('SO', entradaSO)).place(x=360, y=320)
         self.App.infosTemp.append((self.SO, entradaSO))

@@ -2,10 +2,9 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class SextaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app):
-        super().__init__(master)
+    def __init__(self, app):
+        super().__init__(app.master)
         self.App = app
-        self.Pc_info = pc_info
 
     def criarPagina(self):
         self.App.limparTela()
@@ -51,6 +50,8 @@ class SextaPagina(PaginaBase):
         self.ModDisc = Label(text="Modelo do Disco")
         self.ModDisc.place(x=15, y=270)
         entradaModDisco = Entry(bd=5)
+        entradaModDisco.insert(0, self.PcInfo.Disk())
+        self.App.infosParaSalvar['ModDisc'] = entradaModDisco.get()
         entradaModDisco.place(x=220, y=270, width=200) 
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('ModDisc', entradaModDisco)).place(x=430, y=270)
         self.App.infosTemp.append((self.ModDisc, entradaModDisco))
