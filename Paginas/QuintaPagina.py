@@ -1,14 +1,11 @@
 from tkinter import *
 from .PaginaBase import PaginaBase
-from threading import Thread
 
 class QuintaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app, threading):
+    def __init__(self, master, pc_info, app):
         super().__init__(master)
         self.App = app
         self.Pc_info = pc_info
-        self.Thread = threading
-        self.threading = Thread()
 
     def criarPagina(self):
         self.App.limparTela()
@@ -91,4 +88,5 @@ class QuintaPagina(PaginaBase):
         self.B2.place(x=15, y=455)
 
     def run_battery_test_thread(self):
-        Thread(target=self.Programas.open_battery).start()
+        self.Thread(target=self.Programas.open_battery).start()
+        

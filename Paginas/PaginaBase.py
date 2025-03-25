@@ -1,13 +1,15 @@
 from tkinter import *
 from Utils.Programas import Programas
 from Utils.PCinfo import PCinfo
-from threading import *
+import threading
+
 
 class PaginaBase(Frame, Programas, PCinfo):
     def __init__(self, master):
         super().__init__(master)
         self.Programas = Programas()
         self.PcInfo = PCinfo()
+        self.Thread = threading.Thread
 
     def salvar(self, campo, entrada):
         self.infosParaSalvar[campo] = entrada.get()

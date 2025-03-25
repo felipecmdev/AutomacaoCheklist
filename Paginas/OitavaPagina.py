@@ -2,11 +2,10 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class OitavaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app, threading):
+    def __init__(self, master, pc_info, app):
         super().__init__(master)
         self.App = app
         self.Pc_info = pc_info
-        self.Threading = threading
 
     def criarPagina(self):
         self.App.limparTela()
@@ -68,7 +67,7 @@ class OitavaPagina(PaginaBase):
         self.B2.place(x=495, y=455)   
 
     def run_gpuStress_test_thread(self):
-        self.Threading(target=self.Programas.open_gpuStress).start()
+        self.Thread(target=self.Programas.open_gpuStress).start()
     
     def run_cpuInfo_thread(self):
-        self.Threading(target=self.Programas.open_cpuInfo).start()
+        self.Thread(target=self.Programas.open_cpuInfo).start()

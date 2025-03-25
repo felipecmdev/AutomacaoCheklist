@@ -2,11 +2,10 @@ from tkinter import *
 from .PaginaBase import PaginaBase
 
 class SextaPagina(PaginaBase):
-    def __init__(self, master, pc_info, app, threading):
+    def __init__(self, master, pc_info, app):
         super().__init__(master)
         self.App = app
         self.Pc_info = pc_info
-        self.Threading = threading
 
     def criarPagina(self):
         self.App.limparTela()
@@ -71,3 +70,5 @@ class SextaPagina(PaginaBase):
 
     def run_disco_test_thread(self):
        self.Thread(target=self.Programas.open_disco).start()
+
+

@@ -23,7 +23,6 @@ class Controlador:
         self.master.resizable(width=False, height=False)
         self.Programas = Programas()
         self.PcInfo = PCinfo()
-        self.Thread = Thread()
         self.infosTemp = []
         self.infosParaSalvar = {
             'Nome': '', 'DataH': '', 'MarcaModelo': '', 'Serial': '', 'SO': '',
@@ -57,19 +56,19 @@ class Controlador:
         self.paginaAtual.criarPagina()
 
     def quintaPagina(self):
-        self.paginaAtual = QuintaPagina(self.master, self.PcInfo, self, self.Thread)
+        self.paginaAtual = QuintaPagina(self.master, self.PcInfo, self)
         self.paginaAtual.criarPagina()
 
     def sextaPagina(self):
-        self.paginaAtual = SextaPagina(self.master, self.PcInfo, self, self.Thread)
+        self.paginaAtual = SextaPagina(self.master, self.PcInfo, self)
         self.paginaAtual.criarPagina()
 
     def setimaPagina(self):
-        self.paginaAtual = SetimaPagina(self.master, self.PcInfo, self, self.Thread)
+        self.paginaAtual = SetimaPagina(self.master, self.PcInfo, self)
         self.paginaAtual.criarPagina()
 
     def oitavaPagina(self):
-        self.paginaAtual = OitavaPagina(self.master, self.PcInfo, self, self.Thread)
+        self.paginaAtual = OitavaPagina(self.master, self.PcInfo, self)
         self.paginaAtual.criarPagina()
 
     def nonaPagina(self):
@@ -95,4 +94,4 @@ class Controlador:
 
     def salvarDocumento(self, novo_nome_arquivo):
         doc = CriarDoc()
-        doc.salvarDoc(self.infosParaSalvar, novo_nome_arquivo)
+        Thread(target=doc.criarDoc, args=(novo_nome_arquivo, self.infosParaSalvar)).start()
