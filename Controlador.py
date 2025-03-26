@@ -15,6 +15,7 @@ from ModCL.CriarDoc import CriarDoc
 class Controlador:
     def __init__(self):
         self.master = Tk()
+        self.master.title("Automação Checklist")
         self.master.geometry("400x500")
         self.master.minsize(600, 500)
         self.master.maxsize(600, 500)

@@ -10,6 +10,7 @@ class PaginaBase(Frame, Programas, PCinfo):
         self.Programas = Programas()
         self.PcInfo = PCinfo()
         self.Thread = threading.Thread
+        
 
     
 

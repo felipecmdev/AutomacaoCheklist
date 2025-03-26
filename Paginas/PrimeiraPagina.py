@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.ttk import Combobox 
 from .PaginaBase import PaginaBase
 
 class PrimeiraPagina(PaginaBase):
@@ -16,7 +17,7 @@ class PrimeiraPagina(PaginaBase):
         # Nome
         self.Nome = Label(text="Nome do Técnico:")
         self.Nome.place(x=15, y=70)
-        entradaNome = Entry(bd=5)
+        entradaNome =  Combobox(values=["Técnico 1", "Técnico 2", "Técnico 3"])
         entradaNome.place(x=150, y=70, width=200)
         Button(self.master, text="Salvar", command=lambda: self.App.salvar('Nome', entradaNome)).place(x=360, y=70)
         self.App.infosTemp.append((self.Nome, entradaNome))

@@ -35,6 +35,6 @@ class UltimaPagina(PaginaBase):
         if not nome_arquivo.endswith('.docx'):
             nome_arquivo += '.docx'
         self.App.salvarDocumento(nome_arquivo)
-
-        caminho_completo = f"C:/AutomacaoChecklist/{nome_arquivo}"
+        volume = self.Programas.Volume()
+        caminho_completo = f"{volume}/AutomacaoChecklist/{nome_arquivo}"
         self.App.salvarDocumento(caminho_completo)
